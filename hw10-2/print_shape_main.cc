@@ -4,32 +4,27 @@
 using namespace std;
 
 int main() {
-  Rectangle *rect;
-  Circle *c;
   string command;
   double w,h,r;
   vector<Shape*> shapes;
   while (1) {
-  	cin>>command;
+  	cin>>command; 
     if (command == "0") {
       break;
     }
     if (command == "r") {
       cin>>w>>h;
-      rect = new Rectangle(w,h);
-      shapes.push_back(rect);
+      shapes.push_back(new Rectangle(w,h));
     }
     if (command == "c") {
       cin>>r;
-      c = new Circle(r);
-      shapes.push_back(c);
+      shapes.push_back(new Circle(r));
     }
   }
   for (size_t i = 0; i < shapes.size(); ++i) {
     cout<<shapes[i]->getTypeString()<<", "<<shapes[i]->getArea()<<", "<<shapes[i]->getPerimeter()<<endl;
-
+    delete shapes[i];
   }
-  delete rect;
-  delete c;
+
   return 0;
 }
