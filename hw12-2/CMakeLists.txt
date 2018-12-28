@@ -1,0 +1,2 @@
+add_executable(linked_list linked_list_main.cc)
+add_executable(my_shared_ptr my_shared_ptr_main.cc)
